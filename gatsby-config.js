@@ -8,6 +8,8 @@ const contentfulConfig = {
   host: process.env.CONTENTFUL_HOST
 }
 
+const googleTrackingId = process.env.GOOGLE_ANALYTICS_TRACKING_ID
+
 const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
@@ -29,6 +31,12 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: googleTrackingId,
+      },
+    },
   ],
 }
