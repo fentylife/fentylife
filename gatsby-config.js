@@ -21,6 +21,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'FentyLife Unofficial fenty blog',
+    siteUrl: 'https://www.fentylife.com',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -39,5 +40,6 @@ module.exports = {
         head: true,
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 }
